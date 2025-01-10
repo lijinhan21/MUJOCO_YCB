@@ -1,14 +1,12 @@
-# mujoco-ycb-dataset
+# Mujoco-YCB-Dataset
 Tools to download models from the [YCB dataset](https://www.ycbbenchmarks.com/) and use them with the MuJoCo simulator.
 
-![YCB Models in MuJoCo](images/ycb_mujoco_scene.png)
-
-## Python Setup
-
-You only need to install mujoco Python packages to get these tools running.
+## Setup
 
 ```
 pip install mujoco
+pip install obj2mjcf==0.0.8
+pip install mediapy
 ```
 
 ## Downloading YCB objects
@@ -26,6 +24,12 @@ You can configure a few options in the script, including choosing which objects 
 After you have downloaded the YCB models, you can run the following jupyer-notebook files.
 
 1. [Convert YCB datasets to MJCF format](https://github.com/joonhyung-lee/mujoco-ycb-dataset/blob/main/dataset_merge.ipynb)
-2. [Parsing YCB datasets on MuJoCo scene](https://github.com/joonhyung-lee/mujoco-ycb-dataset/blob/main/parsing_ycb_dataset.ipynb)
+2. [Visualize the objects in Mujoco](https://github.com/joonhyung-lee/mujoco-ycb-dataset/blob/main/render_mujoco.ipynb)
 
 **NOTE:** A few of the models in the dataset do not have either of the `google_16k` or `tsdf` meshes available, so these will not work with MuJoCo. So the `dataset_merge.ipynb` will help you.
+
+**NOTE:** The size, density and friction parameters of the objects are not tuned! Please carefully tune them before using.
+
+---
+
+This repo is modified upon https://github.com/joonhyung-lee/mujoco-ycb-dataset/tree/main.
