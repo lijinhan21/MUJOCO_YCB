@@ -3,4 +3,5 @@ asset/ycb
 asset/ycb_merged
 asset/ycb_merged_v2
 asset/ycb_rename
+asset/ycb_mujoco.tar.gz
 MUJOCO_LOG.TXT

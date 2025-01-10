@@ -1,6 +1,8 @@
 # Mujoco-YCB-Dataset
 Tools to download models from the [YCB dataset](https://www.ycbbenchmarks.com/) and use them with the MuJoCo simulator.
 
+You can either follow the instructions provided below, or directly download the converted mjcf files of YCB objects from [this url](https://www.dropbox.com/scl/fi/can8r0ylc16zpm3jy3vmq/ycb_mujoco.tar.gz?rlkey=diqgwkkcyl8p5xem9bk9npmhw&st=4vwu6ul4&dl=0).
+
 ## Setup
 
 ```
