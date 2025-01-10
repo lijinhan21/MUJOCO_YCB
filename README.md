@@ -1,7 +1,9 @@
 # Mujoco-YCB-Dataset
 Tools to download models from the [YCB dataset](https://www.ycbbenchmarks.com/) and use them with the MuJoCo simulator.
 
-You can either follow the instructions provided below, or directly download the converted mjcf files of YCB objects from [this url](https://www.dropbox.com/scl/fi/can8r0ylc16zpm3jy3vmq/ycb_mujoco.tar.gz?rlkey=diqgwkkcyl8p5xem9bk9npmhw&st=4vwu6ul4&dl=0).
+You can either follow the instructions provided below, or directly download the converted mjcf files of YCB objects from [this url](https://www.dropbox.com/scl/fi/bck4zde85zearuyw7s5yn/ycb_mujoco.tar.gz?rlkey=u5f43jhsmjq7hxj93uih1lduk&st=0zfd7rp0&dl=0).
+
+![image](./mujoco_obj.png)
 
 ## Setup
 
@@ -23,10 +25,15 @@ You can configure a few options in the script, including choosing which objects 
 
 After you have downloaded the YCB models, you can run the following jupyer-notebook files.
 
-1. [Convert YCB datasets to MJCF format](https://github.com/lijinhan21/MUJOCO_YCB/blob/main/notebooks/dataset_merge.ipynb)
-2. [Visualize the objects in Mujoco](https://github.com/lijinhan21/MUJOCO_YCB/blob/main/notebooks/render_mujoco.ipynb)
-
-**NOTE:** A few of the models in the dataset do not have either of the `google_16k` or `tsdf` meshes available, so these will not work with MuJoCo. So the `dataset_merge.ipynb` will help you.
+1. Convert YCB datasets to MJCF format: `notebooks/dataset_merge.ipynb`. After converting, the structure of the resulting MJCF files would look like this:
+   ```bash
+    asset/
+        ycb_merged_v2/
+            obj/
+            png/
+            xml/
+   ```
+2. Visualize the objects in Mujoco: `notebooks/render_mujoco.ipynb`.
 
 **NOTE:** The size, density and friction parameters of the objects are not tuned! Please carefully tune them before using.
 

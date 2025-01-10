@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<mujoco model="ycb scene">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.1 0.2 0.3" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.3 0.4 0.5" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="2 2" reflectance="0.2"/>
+    <mesh file="ycb_merged_v2/obj/power_drill.obj" name="power_drill_mesh"/>
+    <texture file="ycb_merged_v2/png/power_drill.png" name="tex-power_drill" type="2d"/>
+    <material name="mat-power_drill" reflectance="0.7" texrepeat="5 5" texture="tex-power_drill" texuniform="true"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" directional="true" diffuse="1 1 1"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <camera name="fixed" pos="0.35 0.35 0.4" xyaxes="-1 1 0 -1 -1 2"/>
+    <body>
+      <body name="object">
+        <geom pos="0 0 0" mesh="power_drill_mesh" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1" density="1000" friction="0.95 0.3 0.1" material="mat-power_drill" group="0" condim="4"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
